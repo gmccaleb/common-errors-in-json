@@ -46,25 +46,25 @@ but it contains multiple syntax errors that prevent it from being parsed.
 
 const invalidBookingJSON = `
 {
-  "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "hotelName": "Grand City Hotel", 
+  "checkInDate": "2024-05-15"  // added comma
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      name: "Alice Johnson", // put name in dbl quotes
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": undefined, //changed null to undefined
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking",] //removed trailing comma
   }
 }
 `;
@@ -91,11 +91,12 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
-
+I used prior knowledge and debugging in the browser to identify errors.
 2️⃣ How did you confirm that your corrected JSON file was valid?
-
+I used a JSON validator
 3️⃣ Which errors were the most difficult to spot? Why?
-
+The type error, where I had to change null to undefined. Only because I had to remember what data types are valid in JSON
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+   Linters and being careful to pay attention when switching between JavaScript and JSON files
 */
